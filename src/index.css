@@ -92,23 +92,151 @@ label {
 
 /******************/
 
-::-webkit-scrollbar {
-  width: 4px;
-  height: 4px;
+@font-face {
+  font-family: 'Terraria';
+  src: url('./assets/fonts/TerrariaFont.TTF') format('truetype');
+  font-weight: normal;
+  font-style: normal;
 }
 
-::-webkit-scrollbar-track {
-  background: #1b1b1b;
-}
-
-::-webkit-scrollbar-thumb {
-  background: #3b82f6;
-  border-radius: 9999px;
-  transition: background-color 500ms;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: #2563eb;
+body {
+    font-family: "Terraria";
+    color: white;
+    text-shadow: 0 0 3px #000;
 }
 
 /******************/
+
+.screen {
+    min-height: 100svh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.25)), url("/terraria-background.webp");
+    background-size: cover; 
+    background-position: center center; 
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}
+
+.container {
+    width: min(85%, 1200px);
+    margin: 0 auto;
+}
+
+.row {
+    display: flex;
+}
+
+.col {
+    display: flex;
+    flex-direction: column;
+}
+
+img {
+    image-rendering: pixelated;
+}
+
+/******************/
+
+/* logo */
+
+.logo-container {
+    width: 50%;
+    position: relative;
+    animation: floatLogo 18s linear infinite;
+    transform-origin: center;
+
+}
+
+.logo-container::before {
+    content: 'Memory Cards!!';
+    position: absolute;
+    right: 0;
+    bottom: -1.5em;
+    animation: widen 2s ease infinite both alternate;
+}
+
+.logo {
+    width: 100%;
+}
+
+/*  */
+
+.main-menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+    margin: 8em auto;
+}
+
+
+.menu__btns {
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    gap: 2em;
+}
+
+.menu__btn {
+    font-size: 2em;
+    &:hover {
+        color: #fed600;
+    }
+}
+
+/*  */
+
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5em;
+    justify-content: center;
+}
+
+.card {
+    aspect-ratio: 1 / 1.5;
+    background-color: red;
+    width: 300px;
+}
+
+@keyframes floatLogo {
+    0% {
+        transform: scale(1) rotate(0deg);
+    }
+    12.5% {
+        transform: scale(1.025) rotate(2deg);
+    }
+    25% {
+        transform: scale(1.05) rotate(0deg);
+    }
+    37.5% {
+        transform: scale(1.025) rotate(-2deg);
+    }
+    50% {
+        transform: scale(1) rotate(0deg);
+    }
+    62.5% {
+        transform: scale(0.975) rotate(2deg);
+    }
+    75% {
+        transform: scale(0.95) rotate(0deg);
+    }
+    87.5% {
+        transform: scale(0.975) rotate(-2deg);
+    }
+    100% {
+        transform: scale(1) rotate(0deg);
+    }
+}
+
+@keyframes widen {
+    from {
+        letter-spacing: normal;
+    }
+    to {
+        letter-spacing: 2px;
+    }
+}
