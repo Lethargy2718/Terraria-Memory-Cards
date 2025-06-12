@@ -1,0 +1,54 @@
+@import './variables.css';
+
+.game-main {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    & > * {
+        flex: 1;
+    }
+}
+
+.game-header {
+    justify-content: space-between;
+    font-size: 2rem;
+    padding: 0.8em 0;
+}
+
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(max(130px, 14.5vw), 1fr));
+    gap: 1em;
+    margin: 2em auto;
+    margin-top: 0;
+}
+
+.card {
+    --border-radius: 10px;
+    background-color: var(--clr-card-background);
+    opacity: 0.8;
+    border: 1px solid black;
+    border-radius: var(--border-radius);
+    padding: 0.5em;
+}
+
+.card__img-container {
+    aspect-ratio: 1;
+    background-color: var(--clr-card-foreground);
+    border-radius: var(--border-radius);
+    margin-bottom: 1em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card__img {
+    width: 70%;
+    aspect-ratio: 1;
+    object-fit: contain;
+}
+
+.card__name {
+    text-align: center;
+    font-size: clamp(1rem, 1vw, 4rem);
+}

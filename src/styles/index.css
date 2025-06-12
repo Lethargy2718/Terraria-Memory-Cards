@@ -1,3 +1,5 @@
+@import './variables.css';
+
 /********RESET**********/
 
 *,
@@ -62,7 +64,8 @@ h6 {
     isolation: isolate;
 }
 
-ul, ol {
+ul,
+ol {
     list-style-position: inside;
 }
 
@@ -79,7 +82,7 @@ button,
 label[for]:not(:has(+ :is(input, select, textarea):disabled)),
 select,
 option,
-input[type="checkbox"],
+input[type='checkbox'],
 ::-webkit-search-cancel-button,
 ::-webkit-scrollbar-thumb,
 ::-webkit-scrollbar-track {
@@ -93,16 +96,23 @@ label {
 /******************/
 
 @font-face {
-  font-family: 'Terraria';
-  src: url('./assets/fonts/TerrariaFont.TTF') format('truetype');
-  font-weight: normal;
-  font-style: normal;
+    font-family: 'Terraria';
+    src: url('./fonts/TerrariaFont.TTF') format('truetype');
+    font-weight: normal;
+    font-style: normal;
 }
 
 body {
-    font-family: "Terraria";
+    font-family: 'Terraria';
     color: white;
     text-shadow: 0 0 3px #000;
+    background:
+        linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.25)),
+        url('/terraria-background.webp');
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
 }
 
 /******************/
@@ -111,17 +121,14 @@ body {
     min-height: 100svh;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+}
 
-    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.25)), url("/terraria-background.webp");
-    background-size: cover; 
-    background-position: center center; 
-    background-attachment: fixed;
-    background-repeat: no-repeat;
+.screen:has(.main-menu) {
+    justify-content: center;
 }
 
 .container {
-    width: min(85%, 1200px);
+    width: min(85%, 1300px);
     margin: 0 auto;
 }
 
@@ -140,6 +147,13 @@ img {
 
 /******************/
 
+.main-loading {
+    display: grid;
+    place-content: center;
+    font-size: 3rem;
+    height: 100vh;
+}
+
 /* logo */
 
 .logo-container {
@@ -147,7 +161,6 @@ img {
     position: relative;
     animation: floatLogo 18s linear infinite;
     transform-origin: center;
-
 }
 
 .logo-container::before {
@@ -172,35 +185,23 @@ img {
     margin: 8em auto;
 }
 
-
 .menu__btns {
     align-items: center;
     justify-content: center;
     flex: 1;
-    gap: 2em;
 }
 
 .menu__btn {
     font-size: 2em;
+    width: 100%;
+    text-align: center;
+    padding: 1em 0.5em;
     &:hover {
-        color: #fed600;
+        color: var(--clr-text-hover);
     }
 }
 
-/*  */
-
-.card-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1.5em;
-    justify-content: center;
-}
-
-.card {
-    aspect-ratio: 1 / 1.5;
-    background-color: red;
-    width: 300px;
-}
+/* Animations */
 
 @keyframes floatLogo {
     0% {
@@ -235,8 +236,10 @@ img {
 @keyframes widen {
     from {
         letter-spacing: normal;
+        transform: scale(1);
     }
     to {
         letter-spacing: 2px;
+        transform: scale(1.05);
     }
 }
