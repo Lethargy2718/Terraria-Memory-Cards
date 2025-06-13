@@ -195,6 +195,7 @@ button:hover {
     align-items: center;
     flex: 1;
     margin: 8em auto;
+    gap: 3em;
 }
 
 .menu__btns {
@@ -207,7 +208,7 @@ button:hover {
     font-size: 2.5rem;
     width: 100%;
     text-align: center;
-    padding: 0.5em 0.5em;
+    padding: 0.5em;
 }
 
 @media (width <= 576px) {
@@ -225,7 +226,9 @@ button:hover {
 
     .menu__btn {
         font-size: 1.75rem;
+        padding: 0.25em;
     }
+
 }
 
 /* Animations */
