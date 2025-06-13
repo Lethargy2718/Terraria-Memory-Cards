@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { SCREENS, ScreenToComponent } from './constants/screens';
-import { DIFFICULTIES, difficultyToCount } from './constants/difficulties';
+import { DIFFICULTIES } from './constants/difficulties';
 
 function App() {
     const [screen, setScreen] = useState(SCREENS.MENU);

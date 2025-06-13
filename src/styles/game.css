@@ -14,14 +14,16 @@ body:has(.game-main) {
     }
 }
 
-.game-header {
+.game-header,
+.collections-header {
     justify-content: space-between;
     font-size: 2rem;
     padding: 0.8em 0;
     gap: 0.4em;
 }
 
-.game-header > * {
+.game-header > *,
+.collections-header > * {
     flex: 1;
     text-align: center;
 }
@@ -112,7 +114,8 @@ body:has(.game-main) {
 }
 
 @media (width <= 576px) {
-    .game-header {
+    .game-header,
+    .collections-header {
         font-size: 1.2rem;
     }
 

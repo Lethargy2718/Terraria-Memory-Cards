@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import Card from './Card';
 import { weaponData } from '../data/weapons';
 import { getRandomItems } from '../utils/getRandomItems';
@@ -27,6 +27,8 @@ export default function Game({ setScreen, difficulty }) {
 
         setClickedCards([...clickedCards, id]);
 
+        addCardToStorage(id);
+
         const newScore = score + 1;
         setScore(newScore);
 
@@ -41,6 +43,16 @@ export default function Game({ setScreen, difficulty }) {
         }
 
         setWeapons(shuffle(weapons));
+    }
+
+    function addCardToStorage(id) {
+        const key = 'collectedCards';
+        const existing = JSON.parse(localStorage.getItem(key)) || [];
+
+        if (!existing.includes(id)) {
+            const updated = [...existing, id];
+            localStorage.setItem(key, JSON.stringify(updated));
+        }
     }
 
     function handlePlayAgain() {
