@@ -40,24 +40,22 @@ body:has(.game-main) {
 }
 
 .card {
-    --border-radius: 10px;
-
     background-color: var(--clr-card-background);
     opacity: 0.8;
     border: 1px solid black;
     padding: 0.5em;
+    padding-bottom: 0;
     clip-path: var(--clip-path);
-}
-
-.card {
     user-select: none;
     -webkit-user-drag: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .card__img-container {
     aspect-ratio: 1;
     background-color: var(--clr-card-foreground);
-    margin-bottom: 1em;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -73,6 +71,10 @@ body:has(.game-main) {
 .card__name {
     text-align: center;
     font-size: clamp(1rem, 1svw, 4rem);
+    flex: 1;
+    display: grid;
+    place-content: center;
+    padding: 1em 0;
 }
 
 .game-end-backdrop {
