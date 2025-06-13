@@ -19,7 +19,8 @@ export default function Game({ setScreen, difficulty }) {
     const [clickedCards, setClickedCards] = useState([]);
     const [status, setStatus] = useState(STATUSES.PLAYING);
 
-    function handleClickCard(id) {
+    function handleClickCard(weapon) {
+        const id = weapon.data.id;
         if (clickedCards.includes(id)) {
             setStatus(STATUSES.LOSE);
             return;
@@ -90,7 +91,7 @@ export default function Game({ setScreen, difficulty }) {
             </main>
 
             {status !== STATUSES.PLAYING && (
-                <div className="game-end-backdrop">
+                <div className="backdrop">
                     <div
                         className={`game-end ${status === STATUSES.WIN ? 'win' : 'lose'}`}
                     >

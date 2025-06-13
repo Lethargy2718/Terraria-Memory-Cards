@@ -70,14 +70,14 @@ body:has(.game-main) {
 
 .card__name {
     text-align: center;
-    font-size: clamp(1rem, 1svw, 4rem);
+    font-size: clamp(1em, 1svw, 4em);
     flex: 1;
     display: grid;
     place-content: center;
     padding: 1em 0;
 }
 
-.game-end-backdrop {
+.backdrop {
     position: fixed;
     inset: 0;
     background-color: rgba(0, 0, 0, 0.6);
@@ -104,7 +104,7 @@ body:has(.game-main) {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 3em 0;
+    padding: 2em 0;
     font-size: 3rem;
     background-color: var(--clr-card-foreground);
     clip-path: var(--clip-path);

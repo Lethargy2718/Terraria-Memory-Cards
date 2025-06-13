@@ -10,6 +10,8 @@ export default function Collection({ setScreen }) {
         JSON.parse(localStorage.getItem('collectedCards')) || [];
 
     const [currentPage, setCurrentPage] = useState(1);
+    const [currentWeapon, setCurrentWeapon] = useState(null);
+
     const pageCount = Math.ceil(weaponData.length / ITEMS_PER_PAGE);
 
     const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
@@ -17,6 +19,10 @@ export default function Collection({ setScreen }) {
         startIndex,
         startIndex + ITEMS_PER_PAGE
     );
+
+    function handleCardClick(weapon) {
+        setCurrentWeapon(weapon);
+    }
 
     return (
         <>
@@ -37,7 +43,7 @@ export default function Collection({ setScreen }) {
                         <Card
                             key={weapon.data.id}
                             weapon={weapon}
-                            onClick={() => 0}
+                            onClick={handleCardClick}
                             obtained={collectedCards.includes(weapon.data.id)}
                         />
                     ))}
@@ -64,6 +70,32 @@ export default function Collection({ setScreen }) {
                     Next
                 </button>
             </footer>
+
+            {currentWeapon !== null && (
+                <div className="backdrop">
+                    <div className="card-info-container row">
+                        <Card
+                            weapon={currentWeapon}
+                            onClick={handleCardClick}
+                        />
+                        <div className="card-info__right">
+                            <button
+                                className="card-info__close-btn"
+                                onClick={() => setCurrentWeapon(null)}
+                            >
+                                ×
+                            </button>
+                            <div className="card-info">
+                                <p>{`${currentWeapon.data.damage} ${currentWeapon.data.damageType} damage`}</p>
+                                <p>{`${currentWeapon.data.knockback} knockback`}</p>
+                                {currentWeapon.data.tooltip?.map((el, idx) => {
+                                    return <p key={idx}>{el}</p>;
+                                })}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            )}
         </>
     );
 }
