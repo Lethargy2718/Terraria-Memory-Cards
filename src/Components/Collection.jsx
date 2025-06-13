@@ -20,8 +20,8 @@ export default function Collection({ setScreen }) {
         startIndex + ITEMS_PER_PAGE
     );
 
-    function handleCardClick(weapon) {
-        setCurrentWeapon(weapon);
+    function handleCardClick(weapon,obtained) {
+        if (obtained) setCurrentWeapon(weapon);
     }
 
     return (

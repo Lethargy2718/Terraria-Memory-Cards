@@ -2,7 +2,7 @@ export default function Card({ weapon, onClick, obtained = true }) {
     const data = weapon.data;
 
     return (
-        <button className="card" onClick={() => onClick(weapon)}>
+        <button className="card" onClick={() => onClick(weapon, obtained)}>
             <div className="card__img-container">
                 {obtained ? (
                     <img
