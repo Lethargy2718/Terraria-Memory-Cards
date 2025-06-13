@@ -204,15 +204,27 @@ button:hover {
 }
 
 .menu__btn {
-    font-size: 2.5em;
+    font-size: 2.5rem;
     width: 100%;
     text-align: center;
     padding: 0.5em 0.5em;
 }
 
 @media (width <= 576px) {
+    .main-menu {
+        margin: 3em auto;
+    }
+
     .logo-container {
         width: 100%;
+    }
+
+    .logo-container::before {
+        font-size: 1rem;
+    }
+
+    .menu__btn {
+        font-size: 1.75rem;
     }
 }
 

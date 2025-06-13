@@ -14,6 +14,7 @@
     justify-content: space-between;
     font-size: 2rem;
     padding: 0.8em 0;
+    gap: 0.4em;
 }
 
 .game-header > * {
@@ -37,6 +38,12 @@
     border: 1px solid black;
     padding: 0.5em;
     clip-path: var(--clip-path);
+}
+
+.card * {
+    user-select: none;
+    -webkit-user-drag: none;
+    pointer-events: none;
 }
 
 .card:hover {
@@ -102,4 +109,17 @@
     background-attachment: fixed;
     background-repeat: no-repeat;
     image-rendering: pixelated;
+}
+
+@media (width <= 576px) {
+    .game-header {
+        font-size: 1rem;
+        & > * {
+            text-align: center !important;
+        }
+    }
+
+    .game-end {
+        font-size: 1.5rem;
+    }
 }
