@@ -152,8 +152,8 @@ img {
     image-rendering: pixelated;
 }
 
-button:hover {
-    color: var(--clr-text-hover);
+* {
+    -webkit-tap-highlight-color: transparent;
 }
 
 /******************/

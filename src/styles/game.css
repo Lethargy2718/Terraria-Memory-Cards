@@ -40,14 +40,9 @@
     clip-path: var(--clip-path);
 }
 
-.card * {
+.card {
     user-select: none;
     -webkit-user-drag: none;
-    pointer-events: none;
-}
-
-.card:hover {
-    transform: translateY(-5px);
 }
 
 .card__img-container {
@@ -119,4 +114,15 @@
     .game-end {
         font-size: 1.5rem;
     }
+}
+
+
+@media (hover: hover) and (pointer: fine) {
+  .card:hover {
+    transform: translateY(-5px);
+  }
+  
+  button:hover {
+    color: var(--clr-text-hover);
+  }
 }
