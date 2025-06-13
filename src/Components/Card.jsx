@@ -2,7 +2,7 @@ export default function Card({ weapon }) {
     const data = weapon.data;
 
     return (
-        <div className="card">
+        <button className="card">
             <div className="card__img-container">
                 <img
                     src={`./weapons/${data.id}.png`}
@@ -11,6 +11,6 @@ export default function Card({ weapon }) {
                 />
             </div>
             <h1 className="card__name">{data.name}</h1>
-        </div>
+        </button>
     );
 }
