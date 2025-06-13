@@ -16,31 +16,21 @@
     padding: 0.8em 0;
 }
 
+.game-header > * {
+    flex: 1;
+    text-align: center;
+}
+
 .card-container {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(max(130px, 14.5vw), 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(clamp(130px, 14.5vw, 16%), 1fr));
     gap: 1em;
     margin: 2em auto;
     margin-top: 0;
 }
 
 .card {
-    --step: 2%;
     --border-radius: 10px;
-    --clip-path: polygon(
-        0% var(--step),
-        var(--step) var(--step),
-        var(--step) 0%,
-        calc(100% - var(--step)) 0%,
-        calc(100% - var(--step)) var(--step),
-        100% var(--step),
-        100% calc(100% - var(--step)),
-        calc(100% - var(--step)) calc(100% - var(--step)),
-        calc(100% - var(--step)) 100%,
-        var(--step) 100%,
-        var(--step) calc(100% - var(--step)),
-        0% calc(100% - var(--step))
-    );
 
     background-color: var(--clr-card-background);
     opacity: 0.8;
@@ -72,4 +62,44 @@
 .card__name {
     text-align: center;
     font-size: clamp(1rem, 1vw, 4rem);
+}
+
+.game-end-backdrop {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.game-end.lose {
+    background:
+        linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.25)),
+        url('/corruption-background.webp');
+}
+
+.game-end.win {
+    background:
+        linear-gradient(rgba(0, 0, 0, 0.5)),
+        url('/hallow-background.png');
+
+}
+
+.game-end {
+    width: min(90%, 800px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 3em 0;
+    font-size: 3rem;
+    background-color: var(--clr-card-foreground);
+    clip-path: var(--clip-path);
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    image-rendering: pixelated;
 }

@@ -106,13 +106,20 @@ body {
     font-family: 'Terraria';
     color: white;
     text-shadow: 0 0 3px #000;
-    background:
-        linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.25)),
-        url('/terraria-background.webp');
+    background-image: url('/terraria-background.webp');
     background-size: cover;
     background-position: center center;
     background-attachment: fixed;
     background-repeat: no-repeat;
+    image-rendering: pixelated;
+}
+
+body::before {
+    content: '';
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(0,0,0,0.2);
 }
 
 /******************/
@@ -143,6 +150,10 @@ body {
 
 img {
     image-rendering: pixelated;
+}
+
+button:hover {
+    color: var(--clr-text-hover);
 }
 
 /******************/
@@ -197,9 +208,11 @@ img {
     width: 100%;
     text-align: center;
     padding: 0.5em 0.5em;
+}
 
-    &:hover {
-        color: var(--clr-text-hover);
+@media (width <= 576px) {
+    .logo-container {
+        width: 100%;
     }
 }
 

@@ -7,12 +7,11 @@ function App() {
     const [difficulty, setDifficulty] = useState(DIFFICULTIES.EASY);
 
     const Screen = ScreenToComponent[screen];
-    const count = difficultyToCount[difficulty];
 
     const props = {
         setScreen,
         setDifficulty,
-        count,
+        difficulty,
     };
 
     return <div className="screen">{<Screen {...props} />}</div>;

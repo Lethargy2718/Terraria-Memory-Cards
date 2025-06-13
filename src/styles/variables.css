@@ -3,4 +3,20 @@
     --clr-card-foreground: #2f2f6b;
     --clr-btn: #2e3271;
     --clr-text-hover: #fed600;
+
+    --step: 2%;
+    --clip-path: polygon(
+        0% var(--step),
+        var(--step) var(--step),
+        var(--step) 0%,
+        calc(100% - var(--step)) 0%,
+        calc(100% - var(--step)) var(--step),
+        100% var(--step),
+        100% calc(100% - var(--step)),
+        calc(100% - var(--step)) calc(100% - var(--step)),
+        calc(100% - var(--step)) 100%,
+        var(--step) 100%,
+        var(--step) calc(100% - var(--step)),
+        0% calc(100% - var(--step))
+    );
 }

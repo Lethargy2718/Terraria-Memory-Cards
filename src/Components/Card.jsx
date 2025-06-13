@@ -1,8 +1,8 @@
-export default function Card({ weapon }) {
+export default function Card({ weapon, onClick }) {
     const data = weapon.data;
 
     return (
-        <button className="card">
+        <button className="card" onClick={() => onClick(data.id)}>
             <div className="card__img-container">
                 <img
                     src={`./weapons/${data.id}.png`}
