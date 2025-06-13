@@ -117,8 +117,8 @@ body {
 body::before {
     content: '';
     position: fixed;
-    height: 100vh;
-    width: 100vw;
+    height: 100svh;
+    width: 100svw;
     background-color: rgba(0,0,0,0.2);
 }
 
@@ -162,7 +162,7 @@ button:hover {
     display: grid;
     place-content: center;
     font-size: 3rem;
-    height: 100vh;
+    height: 100svh;
 }
 
 /* logo */

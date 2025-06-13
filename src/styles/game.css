@@ -24,7 +24,7 @@
 
 .card-container {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(clamp(130px, 14.5vw, 16%), 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(clamp(130px, 14.5svw, 16%), 1fr));
     gap: 1em;
     margin: 2em auto;
     margin-top: 0;
@@ -68,7 +68,7 @@
 
 .card__name {
     text-align: center;
-    font-size: clamp(1rem, 1vw, 4rem);
+    font-size: clamp(1rem, 1svw, 4rem);
 }
 
 .game-end-backdrop {
