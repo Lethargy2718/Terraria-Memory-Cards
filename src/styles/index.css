@@ -97,7 +97,7 @@ label {
 
 @font-face {
     font-family: 'Terraria';
-    src: url('./fonts/TerrariaFont.TTF') format('truetype');
+    src: url('/fonts/TerrariaFont.TTF') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
