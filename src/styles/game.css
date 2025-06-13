@@ -24,7 +24,10 @@
 
 .card-container {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(clamp(130px, 14.5svw, 16%), 1fr));
+    grid-template-columns: repeat(
+        auto-fill,
+        minmax(clamp(130px, 14.5svw, 16%), 1fr)
+    );
     gap: 1em;
     margin: 2em auto;
     margin-top: 0;
@@ -84,9 +87,7 @@
 
 .game-end.win {
     background:
-        linear-gradient(rgba(0, 0, 0, 0.5)),
-        url('/hallow-background.png');
-
+        linear-gradient(rgba(0, 0, 0, 0.5)), url('/hallow-background.png');
 }
 
 .game-end {
@@ -116,13 +117,12 @@
     }
 }
 
-
 @media (hover: hover) and (pointer: fine) {
-  .card:hover {
-    transform: translateY(-5px);
-  }
-  
-  button:hover {
-    color: var(--clr-text-hover);
-  }
+    .card:hover {
+        transform: translateY(-5px);
+    }
+
+    button:hover {
+        color: var(--clr-text-hover);
+    }
 }

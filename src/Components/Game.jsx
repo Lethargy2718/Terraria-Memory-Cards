@@ -53,9 +53,15 @@ export default function Game({ setScreen, difficulty }) {
     return (
         <>
             <header className="container game-header row">
-                <span style={{textAlign: "start"}}>Score: {score}</span>
-                <span style={{textAlign: "center"}}><button onClick={() => setScreen(SCREENS.MENU)}>Main Menu</button></span>
-                <span style={{textAlign: "end"}}>Best Score: {bestScore}</span>
+                <span style={{ textAlign: 'start' }}>Score: {score}</span>
+                <span style={{ textAlign: 'center' }}>
+                    <button onClick={() => setScreen(SCREENS.MENU)}>
+                        Main Menu
+                    </button>
+                </span>
+                <span style={{ textAlign: 'end' }}>
+                    Best Score: {bestScore}
+                </span>
             </header>
             <main className="container main game-main">
                 <div className="card-container">

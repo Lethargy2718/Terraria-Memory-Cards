@@ -106,20 +106,14 @@ body {
     font-family: 'Terraria';
     color: white;
     text-shadow: 0 0 3px #000;
-    background-image: url('/terraria-background.webp');
+    background:
+        linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.25)),
+        url('/terraria-background.webp');
     background-size: cover;
     background-position: center center;
     background-attachment: fixed;
     background-repeat: no-repeat;
     image-rendering: pixelated;
-}
-
-body::before {
-    content: '';
-    position: fixed;
-    height: 100svh;
-    width: 100svw;
-    background-color: rgba(0,0,0,0.2);
 }
 
 /******************/
@@ -228,7 +222,6 @@ img {
         font-size: 1.75rem;
         padding: 0.25em;
     }
-
 }
 
 /* Animations */
