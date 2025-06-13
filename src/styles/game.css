@@ -49,6 +49,10 @@
     clip-path: var(--clip-path);
 }
 
+.card:hover {
+    transform: translateY(-5px);
+}
+
 .card__img-container {
     aspect-ratio: 1;
     background-color: var(--clr-card-foreground);
