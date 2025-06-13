@@ -1,5 +1,9 @@
 @import './variables.css';
 
+body:has(.game-main) {
+    --darkness: 0.5;
+}
+
 .game-main {
     flex: 1;
     display: flex;
