@@ -1,4 +1,8 @@
-export default function getRandomItems(array, n) {
-    const shuffled = [...array].sort(() => 0.5 - Math.random());
+import { shuffle } from "./shuffle";
+
+export function getRandomItems(array, n) {
+    const arr = [...array];
+    const shuffled = shuffle(arr);
     return shuffled.slice(0, n);
 }
+
