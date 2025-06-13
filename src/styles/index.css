@@ -166,6 +166,7 @@ img {
 .logo-container::before {
     content: 'Memory Cards!!';
     position: absolute;
+    font-size: 1.75rem;
     right: 0;
     bottom: -1.5em;
     animation: widen 2s ease infinite both alternate;
@@ -192,10 +193,11 @@ img {
 }
 
 .menu__btn {
-    font-size: 2em;
+    font-size: 2.5em;
     width: 100%;
     text-align: center;
-    padding: 1em 0.5em;
+    padding: 0.5em 0.5em;
+
     &:hover {
         color: var(--clr-text-hover);
     }
@@ -207,27 +209,35 @@ img {
     0% {
         transform: scale(1) rotate(0deg);
     }
+
     12.5% {
         transform: scale(1.025) rotate(2deg);
     }
+
     25% {
         transform: scale(1.05) rotate(0deg);
     }
+
     37.5% {
         transform: scale(1.025) rotate(-2deg);
     }
+
     50% {
         transform: scale(1) rotate(0deg);
     }
+
     62.5% {
         transform: scale(0.975) rotate(2deg);
     }
+
     75% {
         transform: scale(0.95) rotate(0deg);
     }
+
     87.5% {
         transform: scale(0.975) rotate(-2deg);
     }
+
     100% {
         transform: scale(1) rotate(0deg);
     }
@@ -238,6 +248,7 @@ img {
         letter-spacing: normal;
         transform: scale(1);
     }
+
     to {
         letter-spacing: 2px;
         transform: scale(1.05);
